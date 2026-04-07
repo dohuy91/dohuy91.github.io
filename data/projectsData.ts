@@ -1,26 +1,27 @@
 interface Project {
   title: string
   description: string
+  techStack: string[]
   href?: string
   imgSrc?: string
 }
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
+    title: 'Enterprise Banking Platform',
+    description:
+      'Led frontend architecture for a banking platform used across customer onboarding, account servicing, and internal operations.',
+    techStack: ['React', 'TypeScript', 'Design Systems', 'Microfrontends'],
     imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    href: 'https://github.com/dohuy91',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    title: 'Developer Productivity Toolkit',
+    description:
+      'A collection of internal tooling and workflow experiments focused on documentation quality, automation, and team velocity.',
+    techStack: ['Node.js', 'CLI', 'Automation', 'Developer Experience'],
     imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    href: 'https://github.com/dohuy91',
   },
 ]
 
