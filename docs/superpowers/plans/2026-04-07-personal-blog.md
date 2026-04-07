@@ -12,29 +12,30 @@
 
 ## File Map
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `data/siteMetadata.js` | Modify | Site config, feature toggles (comments, search, analytics, newsletter) |
-| `data/authors/default.mdx` | Modify | About page content |
-| `data/projectsData.ts` | Modify | Projects showcase data with `techStack[]` |
-| `data/blog/` | Modify | Replace sample posts with seed posts in EN + VI |
-| `contentlayer.config.ts` | Modify | Add `language` field to Blog document type |
-| `tailwind.config.js` | Modify | Inter font, Notion color palette, prose overrides |
-| `css/tailwind.css` | Modify | Dark background `#1a1a1a`, prose line-height |
-| `components/ThemeSwitch.tsx` | Modify | Extend to 3-mode: Light / Dark / System |
-| `components/LanguageFilter.tsx` | Create | Client component: All / English / Tiếng Việt filter |
-| `app/blog/page.tsx` | Modify | Wire in `LanguageFilter` component |
-| `app/projects/page.tsx` | Modify | Render `techStack[]` badges per project |
-| `next.config.js` | Modify | Enable static export (`output: 'export'`) |
-| `.github/workflows/deploy.yml` | Create | Build + deploy to `gh-pages` branch |
-| `public/.nojekyll` | Create | Prevent GitHub Pages from running Jekyll |
-| `.gitignore` | Modify | Add `.superpowers/`, `.contentlayer/` |
+| File                            | Action | Purpose                                                                |
+| ------------------------------- | ------ | ---------------------------------------------------------------------- |
+| `data/siteMetadata.js`          | Modify | Site config, feature toggles (comments, search, analytics, newsletter) |
+| `data/authors/default.mdx`      | Modify | About page content                                                     |
+| `data/projectsData.ts`          | Modify | Projects showcase data with `techStack[]`                              |
+| `data/blog/`                    | Modify | Replace sample posts with seed posts in EN + VI                        |
+| `contentlayer.config.ts`        | Modify | Add `language` field to Blog document type                             |
+| `tailwind.config.js`            | Modify | Inter font, Notion color palette, prose overrides                      |
+| `css/tailwind.css`              | Modify | Dark background `#1a1a1a`, prose line-height                           |
+| `components/ThemeSwitch.tsx`    | Modify | Extend to 3-mode: Light / Dark / System                                |
+| `components/LanguageFilter.tsx` | Create | Client component: All / English / Tiếng Việt filter                    |
+| `app/blog/page.tsx`             | Modify | Wire in `LanguageFilter` component                                     |
+| `app/projects/page.tsx`         | Modify | Render `techStack[]` badges per project                                |
+| `next.config.js`                | Modify | Enable static export (`output: 'export'`)                              |
+| `.github/workflows/deploy.yml`  | Create | Build + deploy to `gh-pages` branch                                    |
+| `public/.nojekyll`              | Create | Prevent GitHub Pages from running Jekyll                               |
+| `.gitignore`                    | Modify | Add `.superpowers/`, `.contentlayer/`                                  |
 
 ---
 
 ## Task 1: Bootstrap starter into repo
 
 **Files:**
+
 - Modify: all repo root files (populated by clone)
 
 - [ ] **Step 1: Download starter into repo**
@@ -87,6 +88,7 @@ git commit -m "chore: bootstrap tailwind-nextjs-starter-blog"
 ## Task 2: Configure site metadata
 
 **Files:**
+
 - Modify: `data/siteMetadata.js`
 - Modify: `data/authors/default.mdx`
 
@@ -96,7 +98,7 @@ git commit -m "chore: bootstrap tailwind-nextjs-starter-blog"
 const siteMetadata = {
   title: "Huy's Blog",
   author: 'Do Quang Huy',
-  headerTitle: "dohuy91",
+  headerTitle: 'dohuy91',
   description: 'Technical writings on software engineering, productivity, and dev tools.',
   language: 'en-us',
   theme: 'system', // 'system', 'dark', or 'light'
@@ -180,6 +182,7 @@ git commit -m "chore: configure site metadata and about page"
 ## Task 3: Static export + GitHub Actions deploy
 
 **Files:**
+
 - Modify: `next.config.js`
 - Create: `.github/workflows/deploy.yml`
 - Create: `public/.nojekyll`
@@ -266,6 +269,7 @@ jobs:
 - [ ] **Step 5: Enable GitHub Pages in repo settings (manual)**
 
 Go to `https://github.com/dohuy91/dohuy91.github.io/settings/pages`:
+
 - Source: **Deploy from a branch**
 - Branch: **gh-pages** / **/ (root)**
 - Save
@@ -284,6 +288,7 @@ git commit -m "chore: configure static export and GitHub Actions deploy"
 ## Task 4: Notion-like style overrides
 
 **Files:**
+
 - Modify: `tailwind.config.js`
 - Modify: `css/tailwind.css`
 
@@ -362,6 +367,7 @@ git commit -m "style: apply Notion-like font, colors, and prose overrides"
 ## Task 5: Extend theme toggle to 3 modes
 
 **Files:**
+
 - Modify: `components/ThemeSwitch.tsx`
 
 - [ ] **Step 1: Read the existing `components/ThemeSwitch.tsx`**
@@ -438,6 +444,7 @@ git commit -m "feat: extend theme toggle to 3 modes (light/dark/system)"
 ## Task 6: Add language field and filter UI
 
 **Files:**
+
 - Modify: `contentlayer.config.ts`
 - Create: `components/LanguageFilter.tsx`
 - Modify: `app/blog/page.tsx`
@@ -526,10 +533,7 @@ import LanguageFilter from '@/components/LanguageFilter'
 //   <PostList posts={posts} />
 //
 // After:
-<LanguageFilter
-  posts={posts}
-  renderPosts={(filtered) => <PostList posts={filtered} />}
-/>
+;<LanguageFilter posts={posts} renderPosts={(filtered) => <PostList posts={filtered} />} />
 ```
 
 > Note: The exact component name used for the post list (`PostList`, `BlogList`, etc.) will vary — check what `app/blog/page.tsx` currently uses and substitute accordingly.
@@ -554,6 +558,7 @@ git commit -m "feat: add language field and EN/VI filter on blog listing"
 ## Task 7: Enhance projects page with tech stack
 
 **Files:**
+
 - Modify: `data/projectsData.ts`
 - Modify: `app/projects/page.tsx`
 
@@ -588,18 +593,20 @@ Open `app/projects/page.tsx`. Find where it renders each project card and add te
 
 ```tsx
 // After the description paragraph, add:
-{project.techStack && project.techStack.length > 0 && (
-  <div className="mt-3 flex flex-wrap gap-1.5">
-    {project.techStack.map((tech) => (
-      <span
-        key={tech}
-        className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-300"
-      >
-        {tech}
-      </span>
-    ))}
-  </div>
-)}
+{
+  project.techStack && project.techStack.length > 0 && (
+    <div className="mt-3 flex flex-wrap gap-1.5">
+      {project.techStack.map((tech) => (
+        <span
+          key={tech}
+          className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  )
+}
 ```
 
 - [ ] **Step 3: Verify projects page**
@@ -622,31 +629,33 @@ git commit -m "feat: add techStack badges to projects showcase page"
 ## Task 8: Configure features (Giscus, Kbar, Umami, Buttondown)
 
 **Files:**
+
 - Modify: `data/siteMetadata.js` (fill in IDs obtained from external services)
 
 > Prerequisites — complete these setup steps before filling in IDs:
 
 ### 8a: Giscus setup
 
-- [ ] **Step 1: Enable GitHub Discussions on the repo**
+- [x] **Step 1: Enable GitHub Discussions on the repo**
 
 Go to `https://github.com/dohuy91/dohuy91.github.io/settings` → Features → check **Discussions**. Save.
 
-- [ ] **Step 2: Get Giscus IDs**
+- [x] **Step 2: Get Giscus IDs**
 
 Visit `https://giscus.app`. Fill in:
+
 - Repository: `dohuy91/dohuy91.github.io`
 - Page ↔ Discussion mapping: **Pathname**
 - Discussion category: **Announcements**
 
 Copy the `data-repo-id` and `data-category-id` values from the generated script tag.
 
-- [ ] **Step 3: Fill IDs into `siteMetadata.js`**
+- [x] **Step 3: Fill IDs into `siteMetadata.js`**
 
 ```js
 // In giscusConfig:
-repositoryId: 'R_REPLACE_WITH_REPO_ID',
-categoryId: 'DIC_REPLACE_WITH_CATEGORY_ID',
+repositoryId: 'R_kgDOGG_XCQ',
+categoryId: 'DIC_kwDOGG_XCc4C6S8v',
 ```
 
 ### 8b: Umami setup
@@ -694,6 +703,7 @@ git commit -m "chore: configure Giscus, Umami, Buttondown feature IDs"
 ## Task 9: Seed first content, clear sample posts
 
 **Files:**
+
 - Modify: `data/blog/` (delete samples, add seed posts)
 - Modify: `data/authors/default.mdx` (already done in Task 2)
 
@@ -791,6 +801,7 @@ npx serve out
 ```
 
 Open `http://localhost:3000` (or the port shown). Verify:
+
 - Home loads
 - `/blog` shows posts + language filter
 - `/projects` shows card with tech stack badges

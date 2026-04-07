@@ -27,9 +27,9 @@ const siteMetadata = {
     provider: 'giscus',
     giscusConfig: {
       repo: 'dohuy91/dohuy91.github.io',
-      repositoryId: '',
+      repositoryId: 'R_kgDOGG_XCQ',
       category: 'Announcements',
-      categoryId: '',
+      categoryId: 'DIC_kwDOGG_XCc4C6S8v',
       mapping: 'pathname',
       reactions: '1',
       metadata: '0',
