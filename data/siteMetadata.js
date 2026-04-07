@@ -1,3 +1,4 @@
+/** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: "Huy's Blog",
   author: 'Do Quang Huy',
