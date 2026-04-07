@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { slug } from 'github-slugger'
 import { formatDate } from 'pliny/utils/formatDate'
@@ -8,7 +9,9 @@ import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
+import LanguageFilter from '@/components/LanguageFilter'
 import tagData from 'app/tag-data.json'
+import { filterPosts, getLanguageCounts } from '../lib/blog-filters'
 
 interface PaginationProps {
   totalPages: number
@@ -19,6 +22,7 @@ interface ListLayoutProps {
   title: string
   initialDisplayPosts?: CoreContent<Blog>[]
   pagination?: PaginationProps
+  showLanguageFilter?: boolean
 }
 
 function Pagination({ totalPages, currentPage }: PaginationProps) {
@@ -71,21 +75,54 @@ export default function ListLayoutWithTags({
   title,
   initialDisplayPosts = [],
   pagination,
+  showLanguageFilter = false,
 }: ListLayoutProps) {
   const pathname = usePathname()
+  const [searchValue, setSearchValue] = useState('')
+  const [selectedLanguage, setSelectedLanguage] = useState<'all' | 'en' | 'vi'>('all')
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
+  const languageCounts = getLanguageCounts(posts)
+  const filteredPosts = filterPosts(posts, {
+    language: showLanguageFilter ? selectedLanguage : 'all',
+    searchValue,
+  })
 
-  const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
+  const hasActiveFilters =
+    Boolean(searchValue) || (showLanguageFilter && selectedLanguage !== 'all')
+  const displayPosts = hasActiveFilters
+    ? filteredPosts
+    : initialDisplayPosts.length > 0
+      ? initialDisplayPosts
+      : posts
 
   return (
     <>
       <div>
-        <div className="pt-6 pb-6">
+        <div className="space-y-4 pt-6 pb-6">
           <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
             {title}
           </h1>
+          <div className="relative max-w-lg">
+            <label>
+              <span className="sr-only">Search articles</span>
+              <input
+                aria-label="Search articles"
+                type="text"
+                onChange={(event) => setSearchValue(event.target.value)}
+                placeholder="Search articles"
+                className="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+              />
+            </label>
+          </div>
+          {showLanguageFilter && (
+            <LanguageFilter
+              counts={languageCounts}
+              value={selectedLanguage}
+              onChange={setSelectedLanguage}
+            />
+          )}
         </div>
         <div className="flex sm:space-x-24">
           <div className="hidden h-full max-h-screen max-w-[280px] min-w-[280px] flex-wrap overflow-auto rounded-sm bg-gray-50 pt-5 shadow-md sm:flex dark:bg-gray-900/70 dark:shadow-gray-800/40">
@@ -125,8 +162,9 @@ export default function ListLayoutWithTags({
           </div>
           <div>
             <ul>
+              {!filteredPosts.length && <li className="py-5 text-gray-500">No posts found.</li>}
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags } = post
+                const { path, date, title, summary, tags, language } = post
                 return (
                   <li key={path} className="py-5">
                     <article className="flex flex-col space-y-2 xl:space-y-0">
@@ -136,6 +174,11 @@ export default function ListLayoutWithTags({
                           <time dateTime={date} suppressHydrationWarning>
                             {formatDate(date, siteMetadata.locale)}
                           </time>
+                          {showLanguageFilter && (
+                            <span className="ml-3 inline-block rounded-full bg-gray-100 px-2 py-0.5 text-xs uppercase dark:bg-gray-800">
+                              {(language || 'en').toUpperCase()}
+                            </span>
+                          )}
                         </dd>
                       </dl>
                       <div className="space-y-3">
@@ -160,7 +203,7 @@ export default function ListLayoutWithTags({
                 )
               })}
             </ul>
-            {pagination && pagination.totalPages > 1 && (
+            {pagination && pagination.totalPages > 1 && !hasActiveFilters && (
               <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
             )}
           </div>
