@@ -1,0 +1,221 @@
+<svg viewBox="-30 -30 1660 1080" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e1e1e"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a9eed"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-pink" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ec4899"/>
+    </marker>
+    <style>
+      .label { font-size: 13px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: middle; }
+      .label-sm { font-size: 11px; fill: #555555; text-anchor: middle; dominant-baseline: middle; }
+      .label-bold { font-size: 19px; font-weight: bold; fill: #1e1e1e; text-anchor: middle; dominant-baseline: middle; }
+      .zone-label { font-size: 13px; font-weight: bold; }
+      .title { font-size: 26px; font-weight: bold; fill: #1e1e1e; }
+      .legend-label { font-size: 12px; fill: #555555; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="770" y="0" class="title" text-anchor="middle">AI-Powered Engineering Workflow — Superpowers</text>
+
+  <!-- Phase zones -->
+  <rect x="15" y="50" width="235" height="1000" rx="10" fill="#dbe4ff" fill-opacity="0.4" stroke="#4a9eed" stroke-width="1"/>
+  <text x="28" y="72" class="zone-label" fill="#2563eb">PHASE 1 · RESEARCH</text>
+
+  <rect x="265" y="50" width="840" height="1000" rx="10" fill="#e5dbff" fill-opacity="0.4" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="360" y="72" class="zone-label" fill="#6d28d9">PHASE 2 · BRAINSTORM &amp; ORCHESTRATE (Claude Pro)</text>
+
+  <rect x="1120" y="50" width="420" height="1000" rx="10" fill="#d3f9d8" fill-opacity="0.4" stroke="#22c55e" stroke-width="1"/>
+  <text x="1185" y="72" class="zone-label" fill="#15803d">PHASE 3 · BUILD</text>
+
+  <!-- Phase 1 source boxes -->
+  <rect x="25" y="110" width="215" height="58" rx="8" fill="#a5d8ff" stroke="#4a9eed" stroke-width="2"/>
+  <text x="132" y="133" class="label">Google NotebookLM</text>
+  <text x="132" y="152" class="label">Gemini Pro (1mo free)</text>
+
+  <rect x="25" y="210" width="215" height="58" rx="8" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+  <text x="132" y="233" class="label">Google Stitch</text>
+  <text x="132" y="252" class="label">Gemini Pro (1mo free)</text>
+
+  <rect x="25" y="310" width="215" height="58" rx="8" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
+  <text x="132" y="333" class="label">Obsidian</text>
+  <text x="132" y="352" class="label">Free / Second Brain</text>
+
+  <rect x="25" y="410" width="215" height="58" rx="8" fill="#ffd8a8" stroke="#f59e0b" stroke-width="2"/>
+  <text x="132" y="433" class="label">ChatGPT Plus</text>
+  <text x="132" y="452" class="label">Ideation (optional)</text>
+
+  <!-- Claude Pro -->
+  <rect x="410" y="95" width="310" height="82" rx="10" fill="#d0bfff" stroke="#8b5cf6" stroke-width="3"/>
+  <text x="565" y="130" class="label-bold">Claude Pro</text>
+  <text x="565" y="155" class="label" style="font-size:15px">Orchestration Hub</text>
+
+  <!-- Superpowers -->
+  <rect x="410" y="238" width="310" height="52" rx="8" fill="#ffc9c9" stroke="#ef4444" stroke-width="2"/>
+  <text x="565" y="268" class="label" style="font-size:15px;font-weight:bold">Superpowers Framework</text>
+
+  <!-- Brainstorm zone -->
+  <rect x="278" y="348" width="812" height="588" rx="10" fill="#f3e8ff" fill-opacity="0.5" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="295" y="368" class="zone-label" fill="#6d28d9" style="font-size:12px">Brainstorming Session — Claude orchestrates all MCP servers in sequence</text>
+
+  <!-- Step boxes -->
+  <rect x="288" y="392" width="215" height="72" rx="8" fill="#a5d8ff" stroke="#4a9eed" stroke-width="2"/>
+  <text x="395" y="420" class="label" style="font-weight:bold">Step 1 · notebooklm-mcp</text>
+  <text x="395" y="440" class="label">Get info &amp; split features</text>
+
+  <rect x="288" y="508" width="215" height="72" rx="8" fill="#d0bfff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="395" y="532" class="label" style="font-weight:bold">Step 2 · Claude only</text>
+  <text x="395" y="552" class="label">Brainstorm solution</text>
+  <text x="395" y="568" class="label">&amp; architecture</text>
+
+  <rect x="288" y="624" width="215" height="72" rx="8" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+  <text x="395" y="652" class="label" style="font-weight:bold">Step 3 · Stitch MCP</text>
+  <text x="395" y="672" class="label">Brainstorm UI design</text>
+
+  <rect x="288" y="740" width="215" height="72" rx="8" fill="#eebefa" stroke="#ec4899" stroke-width="2"/>
+  <text x="395" y="764" class="label" style="font-weight:bold">Step 4 · Excalidraw / draw.io</text>
+  <text x="395" y="784" class="label">Diagram architecture</text>
+
+  <!-- Step arrows -->
+  <line x1="395" y1="464" x2="395" y2="506" stroke="#4a9eed" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <line x1="395" y1="580" x2="395" y2="622" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <line x1="395" y1="696" x2="395" y2="738" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Output boxes -->
+  <rect x="560" y="392" width="210" height="72" rx="8" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
+  <text x="665" y="420" class="label" style="font-weight:bold">Overall Plan</text>
+  <text x="665" y="440" class="label">(saved to Obsidian)</text>
+
+  <rect x="560" y="508" width="210" height="72" rx="8" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
+  <text x="665" y="532" class="label" style="font-weight:bold">Implementation Plan</text>
+  <text x="665" y="552" class="label">(saved to Obsidian)</text>
+
+  <rect x="560" y="624" width="210" height="72" rx="8" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+  <text x="665" y="652" class="label" style="font-weight:bold">UI Mockup</text>
+  <text x="665" y="672" class="label">(from Stitch)</text>
+
+  <rect x="560" y="740" width="210" height="72" rx="8" fill="#eebefa" stroke="#ec4899" stroke-width="2"/>
+  <text x="665" y="764" class="label" style="font-weight:bold">Architecture Diagram</text>
+  <text x="665" y="784" class="label">(Excalidraw / draw.io)</text>
+
+  <!-- Step to output arrows -->
+  <line x1="503" y1="428" x2="558" y2="428" stroke="#4a9eed" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <line x1="503" y1="544" x2="558" y2="544" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <line x1="503" y1="660" x2="558" y2="660" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <line x1="503" y1="776" x2="558" y2="776" stroke="#ec4899" stroke-width="2" marker-end="url(#arrow-pink)"/>
+
+  <!-- Obsidian store -->
+  <rect x="832" y="540" width="195" height="58" rx="8" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
+  <text x="929" y="563" class="label" style="font-weight:bold">Obsidian Notes</text>
+  <text x="929" y="582" class="label">obsidian-rest-mcp</text>
+
+  <!-- Output to Obsidian -->
+  <line x1="770" y1="428" x2="832" y2="428" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <line x1="832" y1="428" x2="832" y2="558" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <line x1="770" y1="544" x2="830" y2="544" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+
+  <!-- Phase 1 → Claude MCP lanes (routed left of zone) -->
+  <!-- NotebookLM dashed to Claude -->
+  <line x1="240" y1="139" x2="278" y2="139" stroke="#4a9eed" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-blue)"/>
+  <line x1="278" y1="139" x2="278" y2="97" stroke="#4a9eed" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="278" y1="97" x2="408" y2="97" stroke="#4a9eed" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-blue)"/>
+  <text x="340" y="89" class="label-sm" fill="#4a9eed">query</text>
+
+  <!-- Stitch dashed to Claude -->
+  <line x1="240" y1="239" x2="268" y2="239" stroke="#22c55e" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="268" y1="239" x2="268" y2="117" stroke="#22c55e" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="268" y1="117" x2="408" y2="117" stroke="#22c55e" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-green)"/>
+
+  <!-- Obsidian dashed to Claude -->
+  <line x1="240" y1="339" x2="258" y2="339" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="258" y1="339" x2="258" y2="137" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="258" y1="137" x2="408" y2="137" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-amber)"/>
+
+  <!-- ChatGPT to Claude -->
+  <line x1="240" y1="439" x2="248" y2="439" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="248" y1="439" x2="248" y2="157" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="248" y1="157" x2="408" y2="157" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <text x="320" y="149" class="label-sm" fill="#f59e0b">ideation</text>
+
+  <!-- Claude → Superpowers -->
+  <line x1="565" y1="177" x2="565" y2="236" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+  <!-- Superpowers → Brainstorm -->
+  <line x1="565" y1="290" x2="565" y2="346" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+  <text x="590" y="320" class="label-sm" fill="#ef4444">defines flow</text>
+
+  <!-- Claude → Codex (final plan) -->
+  <line x1="720" y1="136" x2="1138" y2="136" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="920" y="128" class="label-sm" fill="#8b5cf6">final plan</text>
+
+  <!-- Superpowers → Codex (skills) -->
+  <line x1="720" y1="264" x2="1020" y2="264" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="1020" y1="264" x2="1020" y2="220" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="1020" y1="220" x2="1138" y2="220" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+  <text x="870" y="256" class="label-sm" fill="#ef4444">skills</text>
+
+  <!-- Obsidian → Codex (plan) -->
+  <line x1="1027" y1="569" x2="1130" y2="569" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="1130" y1="569" x2="1130" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="1130" y1="180" x2="1138" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-amber)"/>
+  <text x="1080" y="560" class="label-sm" fill="#f59e0b">plan</text>
+
+  <!-- Build boxes -->
+  <rect x="1140" y="110" width="215" height="58" rx="8" fill="#b2f2bb" stroke="#22c55e" stroke-width="2"/>
+  <text x="1247" y="133" class="label" style="font-weight:bold">OpenAI Codex</text>
+  <text x="1247" y="152" class="label">(ChatGPT Plus)</text>
+
+  <rect x="1140" y="210" width="215" height="58" rx="8" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+  <text x="1247" y="233" class="label" style="font-weight:bold">GitHub Copilot Enterprise</text>
+  <text x="1247" y="252" class="label">Inline Completion</text>
+
+  <rect x="1140" y="880" width="215" height="58" rx="8" fill="#b2f2bb" stroke="#22c55e" stroke-width="3"/>
+  <text x="1247" y="914" class="label" style="font-size:17px;font-weight:bold">Shipped Code</text>
+
+  <!-- Build flow down -->
+  <line x1="1247" y1="268" x2="1247" y2="878" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Legend -->
+  <rect x="1140" y="390" width="350" height="275" rx="8" fill="#f8f9fa" stroke="#adb5bd" stroke-width="1"/>
+  <text x="1315" y="413" class="label" style="font-size:15px;font-weight:bold">Legend</text>
+
+  <line x1="1158" y1="438" x2="1192" y2="438" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1205" y="438" class="legend-label">Direct flow</text>
+
+  <line x1="1158" y1="466" x2="1192" y2="466" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="1205" y="466" class="legend-label">MCP connection</text>
+
+  <rect x="1158" y="484" width="32" height="18" rx="4" fill="#d0bfff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="1200" y="493" class="legend-label">Claude Pro (orchestrator)</text>
+
+  <rect x="1158" y="514" width="32" height="18" rx="4" fill="#ffc9c9" stroke="#ef4444" stroke-width="2"/>
+  <text x="1200" y="523" class="legend-label">Superpowers framework</text>
+
+  <rect x="1158" y="544" width="32" height="18" rx="4" fill="#a5d8ff" stroke="#4a9eed" stroke-width="2"/>
+  <text x="1200" y="553" class="legend-label">Research / MCP sources</text>
+
+  <rect x="1158" y="574" width="32" height="18" rx="4" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1200" y="583" class="legend-label">Obsidian / plan artifacts</text>
+
+  <rect x="1158" y="604" width="32" height="18" rx="4" fill="#eebefa" stroke="#ec4899" stroke-width="2"/>
+  <text x="1200" y="613" class="legend-label">Diagram MCPs (free)</text>
+
+  <rect x="1158" y="634" width="32" height="18" rx="4" fill="#b2f2bb" stroke="#22c55e" stroke-width="2"/>
+  <text x="1200" y="643" class="legend-label">Build tools</text>
+</svg>
