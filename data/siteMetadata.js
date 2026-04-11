@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: "Huy's Blog",
   author: 'Do Quang Huy',
-  headerTitle: 'dohuy91',
+  headerTitle: 'Huy Do',
   description: 'Technical writings on software engineering, productivity, and dev tools.',
   language: 'en-us',
   theme: 'system',
@@ -17,7 +17,7 @@ const siteMetadata = {
   stickyNav: false,
   analytics: {
     umamiAnalytics: {
-      umamiWebsiteId: '',
+      umamiWebsiteId: 'af06521c-9796-4c66-a0e8-507a18c10b97',
     },
   },
   newsletter: {
